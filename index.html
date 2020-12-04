@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://kit.fontawesome.com/d552fcd193.js" crossorigin="anonymous"></script>
+		<!-- <script src="https://unpkg.com/nodemailer@6.4.10/lib/nodemailer.js"></script> -->
 	</head>
 	<body class="is-preload">
 
@@ -83,6 +84,7 @@
 						<ul class="actions">
 							<li><a href="#" class="button">Mira nuestros proyectos</a></li>
 						</ul>
+					</form>
 					</section>
 
 				<!-- Three -->
@@ -91,16 +93,18 @@
 						<p>No dudes en contactarnos, si deseas cotizacion de tu proyecto, despleges, asesoria en ideas y emprendimientos estamos dispuesto a escucharne y brindarte las mejores herramientas para que tus proyectos se vean realmente profesional</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
-								<form method="post" action="#">
+								<form id="contactForm" method="post" action="#">
 									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+										<div class="col-6 col-12-xsmall"><input type="text" id="name" name="name" placeholder="Name" /></div>
+										<div class="col-6 col-12-xsmall"><input type="email" id="email" name="email" placeholder="Email"/></div>
+										<div class="col-12"><textarea name="message" id="peticion" placeholder="Message" rows="4" ></textarea></div>
 									</div>
+									
 								</form>
 								<ul class="actions">
-									<li><input type="submit" value="Enviar" /></li>
+									<li><input type="submit" value="Enviar" id="btnSend"/></li>
 								</ul>
+								
 							</div>
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
@@ -143,12 +147,49 @@
 			</footer>
 
 		<!-- Scripts -->
+		<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.1.1/firebase.js" crossorigin="anonymous"></script> -->
+		<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+		<!-- <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script> -->
+		<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-functions.js"></script>
+		<!-- <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script> -->
+		<!-- <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script> -->
+		<script src="https://cdn.jsdelivr.net/npm/nodemailer@6/lib/nodemailer.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="assets/js/main.js"></script> 
+			
+			<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- <script src="assets/js/form.js"></script> -->
+<!-- TODO: Add SDKs for Firebase products that you want to use
+	 https://firebase.google.com/docs/web/setup#available-libraries -->
 
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyA2hQQWvwyKiyJJWfHIGkbK3Bih2sfQvCU",
+    authDomain: "diskcurri.firebaseapp.com",
+    databaseURL: "https://diskcurri.firebaseio.com",
+    projectId: "diskcurri",
+    storageBucket: "diskcurri.appspot.com",
+    messagingSenderId: "1043984096399",
+    appId: "1:1043984096399:web:82d00341aa7eb965caa4fa",
+    measurementId: "G-N6V6RHEZ2B"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+//   firebase.analytics();
+
+// const functions = require('firebase-functions');
+
+// The Firebase Admin SDK to access Cloud Firestore.
+// const admin = require('firebase-admin');
+// admin.initializeApp();
+
+</script>
+<script src="assets/js/form.js"></script>
+<!-- <script src="assets/js/bienvenida.js"></script> -->
 	</body>
 </html>
