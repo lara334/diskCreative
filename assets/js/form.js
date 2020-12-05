@@ -13,7 +13,14 @@ btnSend.addEventListener('click', (e) => {
     email: email.value,
     peticion: peticion.value
   })
+  .then(function(){
+    swal ( "¡ Mensaje enviado! " , "Recuerda enviaranos detalladamente tu idea del proyecto" )  ; // Si la petición es correcta y almaceno los datos mostramos un mensaje al usuario.
+  })
+  .catch(function(){
+    swal ( "¡ Mensaje No enviado! " )  ;// En caso de ocurrir un error le mostramos al usuario que ocurrió un error.
+  });
   
+
   document.getElementById('contactForm').reset();
 })
 
